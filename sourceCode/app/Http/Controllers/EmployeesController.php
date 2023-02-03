@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class EmployeesController extends Controller
 {
 
     public function __construct()
@@ -20,8 +20,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::where('role', '=', 'user')
-
+        $employees = User::where('role', '=', 'employee')
+            
             ->paginate(4);
 
         // $allUsers = User::get()->where('role', 'user');;
@@ -29,8 +29,8 @@ class UsersController extends Controller
         // $allEmployees = User::get()->where('role', 'employee');
 
 
-        return view('users', [
-            'users' => $users,
+        return view('employees', [
+            'employees' => $employees,
 
         ]);
     }
@@ -42,11 +42,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('create_user');
+        return view('create_employee');
     }
-
-
-
 
     /**
      * Store a newly created resource in storage.
@@ -68,7 +65,7 @@ class UsersController extends Controller
             'role' => $request->role,
         ]);
 
-        return redirect('admin/users')->with('success', $request->name . ' User created successfully');
+        return redirect('admin/employees')->with('success', $request->name . ' Employee created successfully');
     }
 
 
@@ -93,8 +90,8 @@ class UsersController extends Controller
     {
 
 
-        $users = User::where('id', $id)->get();
-        return view('edit_users', ['users' => $users]);
+        $employees = User::where('id', $id)->get();
+        return view('edit_employees', ['employees' => $employees]);
     }
 
 
@@ -120,8 +117,8 @@ class UsersController extends Controller
             'email' => $request->email,
             'role' => $request->role
         ]);
-        // return redirect()->route('users.index')->with('success','data has been updated successfully');
-        return redirect('admin/users')->with('success', $request->name . 'Data update successfully');
+        // return redirect()->route('employees.index')->with('success','data has been updated successfully');
+        return redirect('admin/employees')->with('success', $request->name . '  Data update successfully');
     }
     public function pagination(Request $request)
 
@@ -130,7 +127,7 @@ class UsersController extends Controller
 
 
 
-        return view('users', compact('users'));
+        return view('employees', compact('employees'));
     }
 
 
@@ -144,8 +141,6 @@ class UsersController extends Controller
     {
         $userDestroy = User::find($id);
         $userDestroy->destroy($id);
-        return redirect('admin/users')->with('success', 'Data deleted successfully');
+        return redirect('admin/employees')->with('success', 'Employee Data deleted successfully');
     }
-
-  
 }

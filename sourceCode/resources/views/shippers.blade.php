@@ -3,9 +3,6 @@
 @section('content')
 
     <div class="container">
-         
-       
-        
 
 
         @if ($message = Session::get('success'))
@@ -15,14 +12,13 @@
         @endif
 
 
-        <h1 class="text-center mt-5">All Users</h1>      
+        <h1 class="text-center mt-5">All shippers</h1>      
         <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary btn-sm float-end"> Go Back</a><br><br><br>
         @if (Auth::check())
             <table class="table table-striped">
                 <thead>
                     <th>id</th>
                     <th>Name</th>
-                    <th>Mobile Number</th>
                     <th>Email</th>
                     <th>User Type</th>
                     <th></th>
@@ -30,17 +26,16 @@
 
                 </thead>
                 <tbody>
-                    @foreach ($users as $row)
+                    @foreach ($shippers as $row)
                         <tr>
                             <td>{{ $row->id }}</td>
                             <td>{{ $row->name }}</td>
-                            <td>{{ $row->phone }}</td>
                             <td>{{ $row->email }}</td>
                             <td>{{ $row->role }}</td>
 
-                            <td><a href="{{ route('admin.users.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a></td>
+                            <td><a href="{{ route('admin.shippers.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a></td>
 
-                            <form class="float-end" method="post" action="{{ route('admin.users.destroy', $row->id) }}">
+                            <form class="float-end" method="post" action="{{ route('admin.shippers.destroy', $row->id) }}">
                                 @csrf
                                 @method('DELETE')
                                 <td><input onclick="return confirm('Are you sure you want to delete this movie?')"
@@ -57,7 +52,7 @@
             </table>
             <span>
 
-                {{$users->links()}}
+                {{$shippers->links()}}
             </span>
     </div>
     @endif

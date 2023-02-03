@@ -9,6 +9,8 @@
             <div class="navbar-nav fw-bolder">
                 <a class="nav-link  " aria-current="page" href="{{ route('admin.dashboard') }}">Dashboard</a>
                 <a class="nav-link" href="users">Users</a>
+                <a class="nav-link" href="shipper">Shipper</a>
+                <a class="nav-link" href="employees">Employees</a>
                 <a class="nav-link" href="{{ route('admin.categories.index') }}">Categories</a>
                 <a class="nav-link" href="{{ route('admin.roomsAdmin.index') }}">Rooms</a>
                 <a class="nav-link" href="{{ route('admin.booking.index') }}">Reservations</a>

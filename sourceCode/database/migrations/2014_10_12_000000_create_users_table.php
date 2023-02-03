@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('role')->default('user');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('user_image')->default('testimonial-1.jpg');
+            $table->string('user_image')->default('useredite.jpg');
             $table->rememberToken();
             $table->timestamps();
           

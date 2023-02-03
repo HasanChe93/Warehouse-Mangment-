@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
+
 use App\Http\Controllers\ReviewuserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomListingController;
 use App\Http\Controllers\UserPublicController;
 use App\Http\Middleware\GuestMiddleware;
+
 
 
 /*

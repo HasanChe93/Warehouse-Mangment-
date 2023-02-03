@@ -32,7 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $allUsers = User::where('role', '!=', 'admin')->get();
+        $allUsers = User::get()->where('role', 'user');;
         $allShippers = User::get()->where('role', 'shipper');
         $allEmployees = User::get()->where('role', 'employee');
         $allCategory = category::all()->count();
@@ -79,4 +79,5 @@ if(Auth::user()->role=='admin'){
             ]);
         }else  return view('/index');
     }
+    
 }

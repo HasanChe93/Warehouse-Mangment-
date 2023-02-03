@@ -21,32 +21,32 @@
                 <a href="{{ route('admin.users.index') }}" class="btn btn-primary btn-sm float-end"> Go Back</a>
             </div>
 
-            @foreach ($users as $user)
+            @foreach ($employees as $employee)
                 <div class="card-body ">
-                    <form method="post" action="{{ route('admin.users.update', $user->id) }}">
+                    <form method="post" action="{{ route('admin.employees.update', $employee->id) }}">
                         @csrf
                         @method('PATCH')
                         <div class="d-flex justify-content-center py-3">
-                            <img src="{{ $user->user_image }}" class="rounded-circle" width="150" height="150">
+                            <img src="{{ $employee->user_image }}" class="rounded-circle" width="150" height="150">
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-label-form">User Name : </label>
                             <div class="col-sm-10">
-                                <input type="text" name="name" class="form-control" value="{{ $user->name }}" />
+                                <input type="text" name="name" class="form-control" value="{{ $employee->name }}" />
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-label-form">Email : </label>
                             <div class="col-sm-10">
                                 <input type="text" name="email" rows="6" class="form-control"
-                                    value="{{ $user->email }}">
+                                    value="{{ $employee->email }}">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-label-form">Phone : </label>
                             <div class="col-sm-10">
                                 <input type="phone" name="phone" rows="6" class="form-control"
-                                    value="{{ $user->phone }}">
+                                    value="{{ $employee->phone }}">
                             </div>
 
 

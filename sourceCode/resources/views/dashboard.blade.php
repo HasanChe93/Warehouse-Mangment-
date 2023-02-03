@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@extends('layouts.nav')
+{{-- @extends('layouts.nav') --}}
 @section('content')
 
     <head>
@@ -79,6 +79,7 @@
             .bg-gO {
                 background: linear-gradient(45deg, #036539, #029453);
             }
+
             .bg-rE {
                 background: linear-gradient(45deg, #480902, #821509);
             }
