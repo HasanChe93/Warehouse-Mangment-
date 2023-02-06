@@ -9,20 +9,26 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
+
 use App\Http\Controllers\ProductAdminController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RoomController;
 use App\Http\Middleware\EmployeeMiddleware;
+use App\Http\Controllers\ShippersController;
 
-Route::middleware([EmployeeMiddleware::class])->name('employee')->prefix('employee')->group(function () {
+
+Route::middleware([EmployeeMiddleware::class])->name('employee.')->prefix('employee')->group(function () {
     Route::resource('/products', ProductsController::class);
     Route::resource('/users', UsersController::class);
     Route::resource('/booking', BookingController::class);
-    Route::get('/dashboardEmployee', [HomeController::class, 'index']);
+    Route::get('/dashboard', [HomeController::class, 'index']);
     Route::resource('/categories', CategoryController::class);
     // Route::resource('/productsAdmin', ProductAdminController::class);
     Route::resource('/roomsAdmin', RoomController::class);
     Route::resource('/categoryAdmin', CategoryController::class);
-    Route::resource('/reviewsAdmin', ReviewController::class);
+    Route::resource('/reviewsEmployee', ReviewController::class);
     Route::resource('/contactAdmin', ContactusAdminController::class);
+    Route::resource('/shippers', ShippersController::class);
+    Route::resource('/products', ProductsController::class);
+
 });

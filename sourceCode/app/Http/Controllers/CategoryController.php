@@ -13,6 +13,7 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware('admin');
+        $this->middleware('employee');
     }
 
     /**
@@ -60,8 +61,7 @@ class CategoryController extends Controller
         $category->cat_name = $request->cat_name;
         $category->cat_img = $file_name;
         $category->save();
-        return redirect('admin/categories')->with('success', 'Category Data Add successfully');
-
+        return redirect('admin/categories')->with(['success' => "$category->cat_name Had Been Added Successfully"]);
     }
 
     /**
@@ -124,8 +124,7 @@ class CategoryController extends Controller
 
 
 
-        return redirect('admin/categories')->with('success', 'Category Data update successfully');
-    }
+        return redirect('admin/categories')->with(['success' => "$category->cat_name Had Been Updated Successfully"]);    }
 
     /**
      * Remove the specified resource from storage.
@@ -137,6 +136,6 @@ class CategoryController extends Controller
     {
         $userDestroy = category::find($id);
         $userDestroy->destroy($id);
-        return redirect('admin/categoryAdmin')->with('success', ' category Data deleted successfully');
+        return redirect('admin/categoryAdmin')->with('success', ' category Had Been Deleted Successfully');
     }
 }

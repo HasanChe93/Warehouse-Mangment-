@@ -60,12 +60,13 @@ class UsersController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'role' => 'required',
-        ]);
+'employee_type' => 'required'        ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'role' => $request->role,
+           'employee_type' => $request->employee_type,
         ]);
 
         return redirect('admin/users')->with('success', $request->name . ' User created successfully');

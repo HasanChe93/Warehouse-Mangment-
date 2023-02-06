@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class ReviewController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+        $this->middleware('employee');
+    }
     /**
      * Display a listing of the resource.
      *

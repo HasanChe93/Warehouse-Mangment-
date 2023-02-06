@@ -76,6 +76,25 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('userprofile.index') }}"><i class="fa-solid fa-user"> My Profile </i></a>
+                                      
+                                        <a class="dropdown-item" href="{{ route('userprofile.index') }}">  <div class="h-100 d-inline-flex align-items-center py-2 me-4">
+                                            <i class="fa-solid text-primary me-2 fa-heart"> Wishlist</i>
+                                         </div>
+                                        </a>
+        
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                            <i class="fa-solid fa-right-from-bracket"> {{ __('Logout') }}</i>
+                                        </a>
+        
+                                        
+        
+        
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

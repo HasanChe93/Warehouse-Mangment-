@@ -29,22 +29,22 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="carousel-item">
                     <img class="w-50" src="img/car1.jpg" alt="Image"><img class="w-50" src="img/car2.jpg"
-                    alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 1000px;">
-                        <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Smart Storage
-                            Solution</h6>
-                        <h1 class="display-6 text-white mb-4 animated slideInDown">Add efficiency to your warehouse with
-                            intelligent space management
+                        alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 1000px;">
+                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Smart Storage
+                                Solution</h6>
+                            <h1 class="display-6 text-white mb-4 animated slideInDown">Add efficiency to your warehouse with
+                                intelligent space management
 
-                        </h1>
+                            </h1>
 
 
-                        <a href="{{ route('room') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A
-                            Space</a>
+                            <a href="{{ route('room') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A
+                                Space</a>
 
 
                         </div>
@@ -52,9 +52,9 @@
                 </div>
                 <div class="carousel-item">
                     <img class="w-50" src="img/car1.jpg" alt="Image"><img class="w-50" src="img/car2.jpg"
-                    alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <div class="p-3" style="max-width: 1000px;">
+                        alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 1000px;">
                             <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Huge Collection Of
                                 Authentic Products </h6>
                             <h1 class="display-3 text-white mb-4 animated slideInDown">The Original, The Authentic Products
@@ -79,7 +79,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        
+
     </div>
     <!-- Carousel End -->
 
@@ -116,9 +116,9 @@
                         <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                             <div class="border rounded p-1">
                                 <div class="border rounded text-center p-4">
-                                    <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                    <h2 class="mb-1" data-toggle="counter-up">{{ DB::table('rooms')->count() }}</h2>
-                                    <p class="mb-0">Rooms</p>
+                                    <i class="fa-solid fa-gift fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">{{ DB::table('products')->count() }}</h2>
+                                    <p class="mb-0">Products</p>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +129,10 @@
                             <div class="border rounded p-1">
                                 <div class="border rounded text-center p-4">
                                     <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                                    <h2 class="mb-1" data-toggle="counter-up">53</h2>
+
+                                    <h2 class="mb-1" data-toggle="counter-up">
+                                        {{ DB::table('users')->where('role', 'employee')->count() }}
+                                    </h2>
                                     <p class="mb-0">Staffs</p>
                                 </div>
                             </div>
@@ -138,13 +141,16 @@
                             <div class="border rounded p-1">
                                 <div class="border rounded text-center p-4">
                                     <i class="fa fa-users fa-2x text-primary mb-2"></i>
-                                    <h2 class="mb-1" data-toggle="counter-up">{{ DB::table('users')->count() }}</h2>
+                                    <h2 class="mb-1" data-toggle="counter-up">
+                                        {{ DB::table('users')->where('role', 'user')->count() }}</h2>
+                                    {{-- DB::table('users')
+                                    ->whereNotIn('role', ['admin', 'employee', 'shipper']) --}}
                                     <p class="mb-0">Clients</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="/#more">Explore More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="/about">Explore More</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="row g-3">
@@ -191,7 +197,7 @@
                         suppliers and manufacturers to ensure that our products are genuine and meet the highest standards
                         of quality.
                     </p>
-                    <a href="{{ route('room') }}" class="btn btn-primary py-md-3 px-md-5 me-3">Our Warehouse</a>
+                    {{-- <a href="{{ route('room') }}" class="btn btn-primary py-md-3 px-md-5 me-3">Our Warehouse</a> --}}
 
                 </div>
             </div>
@@ -237,80 +243,57 @@
                 <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Services</span></h1>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <a class="service-item rounded" href="{{ route('room') }}">
-                        <div class="service-icon bg-transparent border rounded p-1">
-                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                <i class="fa fa-hotel fa-2x text-primary"></i>
-                            </div>
-                        </div>
+                <div class="row" style="justify-content: space-around">
+
+
+        
+                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('room') }}">
+                        <img src="img/pl2.png" class="card-img-top" alt="...">
+
                         <h5 class="mb-3">Rooms & Appartment</h5>
                         <p class="text-body mb-0">It's going to be a great night… Now book yourself a great room, with
                             blackhours.com. Find top hotel deals for all occasions. Tonight, or any night.
                         </p>
+
                     </a>
-                </div>
 
 
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <a class="service-item rounded" href="Food&Restaurant">
-                        <div class="service-icon bg-transparent border rounded p-1">
-                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                <i class="fa fa-utensils fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <h5 class="mb-3">Food & Restaurant</h5>
-                        <p class="text-body mb-0">Enjoy the ultimate dining experience with Ayla Oasis. Discover Ayla's
-                            restaurants and bars combining good food with mesmerizing vibes.</p>
+          
+      
+                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('room') }}">
+                        <img src="img/pl2.png" class="card-img-top" alt="...">
+
+                        <h5 class="mb-3">Rooms & Appartment</h5>
+                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great room, with
+                            blackhours.com. Find top hotel deals for all occasions. Tonight, or any night.
+                        </p>
+
                     </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <a class="service-item rounded" href="Spa&Fitness">
-                        <div class="service-icon bg-transparent border rounded p-1">
-                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                <i class="fa fa-spa fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <h5 class="mb-3">Spa & Fitness</h5>
-                        <p class="text-body mb-0">Experience the absolute best- discover why the Spa Fitness and Wellness
-                            Center, Fayetteville's only complete gym, should be your gym choice for the best </p>
+
+
+            
+          
+                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('room') }}">
+                        <img src="img/pl2.png" class="card-img-top" alt="...">
+
+                        <h5 class="mb-3">Rooms & Appartment</h5>
+                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great room, with
+                            blackhours.com. Find top hotel deals for all occasions. Tonight, or any night.
+                        </p>
+
                     </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <a class="service-item rounded" href="Sports&Gaming">
-                        <div class="service-icon bg-transparent border rounded p-1">
-                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                <i class="fa fa-swimmer fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <h5 class="mb-3">Sports & Gaming</h5>
-                        <p class="text-body mb-0">Esports, short for electronic sports, is a form of competition using
-                            video games. Esports often takes the form of organized, multiplayer video game</p>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <a class="service-item rounded" href="Event&party">
-                        <div class="service-icon bg-transparent border rounded p-1">
-                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                <i class="fa fa-glass-cheers fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <h5 class="mb-3">Event & Party</h5>
-                        <p class="text-body mb-0">events and parties ideas that the whole family will enjoy.</p>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <a class="service-item rounded" href="GYM&Yoga">
-                        <div class="service-icon bg-transparent border rounded p-1">
-                            <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                <i class="fa fa-dumbbell fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <h5 class="mb-3">GYM & Yoga</h5>
-                        <p class="text-body mb-0">Workouts in the gym and yoga seem like two completely opposing fitness
-                            disciplines when in fact, they are quite complementary to each other.</p>
-                    </a>
-                </div>
+
+
+
+
+
+
+
+            </div>
+
+           
+           
+               
             </div>
         </div>
     </div>

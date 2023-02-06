@@ -21,6 +21,8 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>User Type</th>
+                    <th>Employee Type</th>
+
                     <th></th>
                     <th></th>
 
@@ -32,6 +34,7 @@
                             <td>{{ $row->name }}</td>
                             <td>{{ $row->email }}</td>
                             <td>{{ $row->role }}</td>
+                            <td>{{ $row->employee_type }}</td>
 
                             <td><a href="{{ route('admin.employees.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a></td>
 

@@ -1,5 +1,11 @@
+{{-- @extends('layouts.app2')
+@extends('pages.master.header2') --}}
 @extends('pages.master.header2')
-@extends('layouts.app2')
+
+
+
+
+
 @section('profile')
     <div class="container mt-5">
         <div class="main-body">

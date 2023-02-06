@@ -44,12 +44,12 @@
 
     <div class="container-fluid bg-white p-0">
         <!-- Spinner Start -->
-        <div id="spinner"
+        {{-- <div id="spinner"
             class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
-        </div>
+        </div> --}}
         <!-- Spinner End -->
 
         <!-- Header Start -->
@@ -158,6 +158,7 @@
                     <a href="{{ route('services') }}" class="nav-item nav-link">Services</a>
                     <a href="{{ route('room') }}" class="nav-item nav-link">Rooms</a>
                     <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
+                    <a href="/privacy-policy" class="nav-item nav-link">privacy&policy</a>
                     <a href="{{ route('contactus.index') }}" class="nav-item nav-link">Contact Us</a>
                 </div>
 

@@ -35,6 +35,7 @@ class HomeController extends Controller
         $allUsers = User::get()->where('role', 'user');;
         $allShippers = User::get()->where('role', 'shipper');
         $allEmployees = User::get()->where('role', 'employee');
+        $allProducts = Product::all()->count();
         $allCategory = category::all()->count();
         $allRooms = room::all()->count();
         $allreview = review::all()->count();
@@ -46,6 +47,7 @@ if(Auth::user()->role=='admin'){
             'allUsers' => $allUsers->count(),
             'allShippers' => $allShippers->count(),
             'allEmployees' => $allEmployees->count(),
+            'allProducts' => $allProducts,
             'allCategory' => $allCategory,
             'allRooms' => $allRooms,
             'allreview' => $allreview,
@@ -58,6 +60,7 @@ if(Auth::user()->role=='admin'){
                 'allUsers' => $allUsers->count(),
                 'allShippers' => $allShippers->count(),
                 'allEmployees' => $allEmployees->count(),
+                'allProducts' => $allProducts,
                 'allCategory' => $allCategory,
                 'allRooms' => $allRooms,
                 'allreview' => $allreview,
@@ -70,6 +73,7 @@ if(Auth::user()->role=='admin'){
                 'allUsers' => $allUsers->count(),
                 'allShippers' => $allShippers->count(),
                 'allEmployees' => $allEmployees->count(),
+                'allProducts' => $allProducts,
                 'allCategory' => $allCategory,
                 'allRooms' => $allRooms,
                 'allreview' => $allreview,

@@ -56,17 +56,23 @@
                         <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                             <div class="border rounded p-1">
                                 <div class="border rounded text-center p-4">
-                                    <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                    <h2 class="mb-1" data-toggle="counter-up">{{ DB::table('rooms')->count() }}</h2>
-                                    <p class="mb-0">Rooms</p>
+                                    <i class="fa-solid fa-gift fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">{{ DB::table('products')->count() }}</h2>
+                                    <p class="mb-0">Products</p>
                                 </div>
                             </div>
                         </div>
+
+
+
                         <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
                             <div class="border rounded p-1">
                                 <div class="border rounded text-center p-4">
                                     <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                                    <h2 class="mb-1" data-toggle="counter-up">69</h2>
+
+                                    <h2 class="mb-1" data-toggle="counter-up">
+                                        {{ DB::table('users')->where('role', 'employee')->count() }}
+                                    </h2>
                                     <p class="mb-0">Staffs</p>
                                 </div>
                             </div>
@@ -75,7 +81,10 @@
                             <div class="border rounded p-1">
                                 <div class="border rounded text-center p-4">
                                     <i class="fa fa-users fa-2x text-primary mb-2"></i>
-                                    <h2 class="mb-1" data-toggle="counter-up">{{ DB::table('users')->count() }}</h2>
+                                    <h2 class="mb-1" data-toggle="counter-up">
+                                        {{ DB::table('users')->where('role', 'user')->count() }}</h2>
+                                    {{-- DB::table('users')
+                                    ->whereNotIn('role', ['admin', 'employee', 'shipper']) --}}
                                     <p class="mb-0">Clients</p>
                                 </div>
                             </div>
@@ -117,130 +126,102 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="rounded shadow overflow-hidden">
                         <div class="position-relative">
-                            <img class="img-fluid" src="img/Hassan.jpg" alt="">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
                             <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.facebook.com/AboEl3bd/"><i class="fab fa-facebook-f"></i></a>
+                                    href="https://www.facebook.com//"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.instagram.com/hasanabuhashem/"><i class="fab fa-instagram"></i></a>
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.linkedin.com/in/hasan-abu-hashem/"><i
+                                    href="https://www.linkedin.com/"><i
                                         class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Hasan Abu Hashem</h5>
-                            <small>Scrum Master</small>
+                            <h5 class="fw-bold mb-0">Lionel Benoucci</h5>
+                            <small>CEO </small>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+             
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="rounded shadow overflow-hidden">
                         <div class="position-relative">
-                            <img class="img-fluid" src="img/Emran.jpeg" alt="">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
                             <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://web.facebook.com/dabbas34"><i class="fab fa-facebook-f"></i></a>
+                                    href="https://www.facebook.com//"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.instagram.com/emran_aldabbas/"><i class="fab fa-instagram"></i></a>
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.linkedin.com/in/emran-abuazzam-68b002197/"><i
+                                    href="https://www.linkedin.com/"><i
                                         class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Emran AbuAazzam</h5>
-                            <small>product owner</small>
+                            <h5 class="fw-bold mb-0">Alvarz Benoucci</h5>
+                            <small>COO</small>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="rounded shadow overflow-hidden">
                         <div class="position-relative">
-                            <img class="img-fluid" src="img/baseel.jpg" alt="">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
                             <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.linkedin.com/in/basel-abu-saleem-1482911b4/"><i
+                                    href="https://www.facebook.com//"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" target="_blank"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" target="_blank"
+                                    href="https://www.linkedin.com/"><i
                                         class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Basil abuisleem</h5>
-                            <small>Team members</small>
+                            <h5 class="fw-bold mb-0">Ronald Bounocci</h5>
+                            <small>CTO </small>
                         </div>
                     </div>
                 </div>
-
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="rounded shadow overflow-hidden">
                         <div class="position-relative">
-                            <img class="img-fluid" src="img/Rahaf.jpg" alt="">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
                             <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.facebook.com/rahf.abadi.7"><i class="fab fa-facebook-f"></i></a>
+                                    href="https://www.facebook.com//"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.instagram.com/rahaff_alabadi/"><i class="fab fa-instagram"></i></a>
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.linkedin.com/in/rahaf-alabadi-2b7367244/"><i
+                                    href="https://www.linkedin.com/"><i
                                         class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Rahaf Abadi</h5>
-                            <small>Team members</small>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="rounded shadow overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/Ziad.jpg" alt="">
-                            <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://web.facebook.com/ziad.abazid.3"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.linkedin.com/in/ziad-abazeed-529532244/"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">Ziad Abazeed</h5>
-                            <small>Team members</small>
+                            <h5 class="fw-bold mb-0">Monir Bellucii</h5>
+                            <small>CFO</small>
                         </div>
                     </div>
                 </div>
 
 
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="rounded shadow overflow-hidden">
-                        <div class="position-relative">
-                            <img class="img-fluid" src="img/Qassem.jfif" alt="">
-                            <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://web.facebook.com/alqassem.oweida/?_rdc=1&_rdr"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.instagram.com/qasem_oweida/"><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" target="_blank"
-                                    href="https://www.linkedin.com/in/alqassem-oweida"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 mt-3">
-                            <h5 class="fw-bold mb-0">AlQassem Oweida</h5>
-                            <small>Team members</small>
-                        </div>
-                    </div>
-                </div>
+
+
+              
+
+             
+
+
+              
+
+
+               
+
+
+
+             
 
 
 

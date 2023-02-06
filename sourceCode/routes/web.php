@@ -70,8 +70,8 @@ Route::get('/testimonial', function () {
     return view('pages.testimonial');
 });
 
-Route::get('/Privacy Policy', function () {
-    return view('pages.Privacy Policy');
+Route::get('/privacy-policy', function () {
+    return view('pages.privacy-policy');
 });
 
 Route::get('/Terms and Condition', function () {

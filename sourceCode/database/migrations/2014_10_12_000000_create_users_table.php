@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('phone');
             $table->string('password');
             $table->string('role')->default('user');
+            $table->string('employee_type')->default('general');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('user_image')->default('useredite.jpg');
+            $table->string('user_image')->default('testimonial-1.jpg');
             $table->rememberToken();
             $table->timestamps();
           

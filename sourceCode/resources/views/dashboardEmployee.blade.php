@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@extends('layouts.nav')
+{{-- @extends('layouts.nav') --}}
 @section('content')
 
     <head>
 
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        {{-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> --}}
         <style>
             body {
                 background: #eee;
@@ -76,6 +76,14 @@
                 background: linear-gradient(45deg, #4099ff, #73b4ff);
             }
 
+            .bg-gO {
+                background: linear-gradient(45deg, #036539, #029453);
+            }
+
+            .bg-rE {
+                background: linear-gradient(45deg, #480902, #821509);
+            }
+
             .bg-green {
                 background: linear-gradient(45deg, #2ed8b6, #59e0c5);
             }
@@ -99,7 +107,7 @@
 
 
     </head>
-   
+
 
     <div class="container">
         <div class="row justify-content">
@@ -111,10 +119,50 @@
                 <div class="row">
 
 
-                 
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card-box bg-blue">
+                            <div class="inner">
+                                <h3> ( {{ $allUsers }} ) </h3>
+                                <p> Number Of Users </p>
+                            </div>
+                            <div class="icon">
+                                <i class="bi bi-person-circle"></i>
+                            </div>
+                            <a href="users" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card-box bg-gO">
+                            <div class="inner">
+                                <h3> ( {{ $allShippers }} ) </h3>
+                                <p> Number Of Shippers </p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <a href="shippers" class="card-box-footer">View More <i
+                                    class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
 
 
+              
 
+
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card-box bg-green">
+                            <div class="inner">
+                                <h3> ( {{ $allProducts }} ) </h3>
+                                <p> Number Of Products </p>
+                            </div>
+                            <div class="icon">
+                                <i class="bi bi-columns-gap"></i>
+                            </div>
+                            <a href="{{ route('admin.products.index') }}" class="card-box-footer">View More <i
+                                    class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
 
 
                     <div class="col-lg-3 col-sm-6">
@@ -126,10 +174,11 @@
                             <div class="icon">
                                 <i class="bi bi-columns-gap"></i>
                             </div>
-                            <a href="{{ route('admin.categories.index') }}" class="card-box-footer">View More <i
+                            <a href="{{ route('employee.categories.index') }}" class="card-box-footer">View More <i
                                     class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+
 
 
 
@@ -190,7 +239,8 @@
                     </div>
 
 
-                
+                   
+
 
 
 

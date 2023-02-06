@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string('brand_name');
             $table->string('shipper_name');
             $table->bigInteger('product_model');
+            $table->bigInteger('product_quantity');
             $table->foreignId('cat_id')->references('id')->on('categories')
                 ->onDelete('cascade');
-            $table->foreignId('user_id')->on('users')->where('role', 'shipper')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')
+                ->onDelete('cascade');
             $table->decimal('product_price');
             $table->text('product_description');
             $table->string('product_image1')->nullable();
