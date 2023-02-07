@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactusController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
 
@@ -24,8 +25,9 @@ use App\Http\Middleware\GuestMiddleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post('/email',[EmailController::class,'store'])->name('email.store');
 Auth::routes();
+
 
 Route::get('/', function () {
     return view('pages.index');
@@ -114,3 +116,4 @@ Route::get('/GYM&Yoga', function () {
 Route::get('/Sports&Gaming', function () {
     return view('pages.Sports&Gaming');
 });
+

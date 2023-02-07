@@ -178,7 +178,7 @@
 
 
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card-box bg-green">
+                        <div class="card-box bg-gO">
                             <div class="inner">
                                 <h3> ( {{ $allCategory }} ) </h3>
                                 <p> Number Of Categories </p>
@@ -191,27 +191,29 @@
                         </div>
                     </div>
 
-
-
-
-
-
-
-
-
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card-box bg-orange">
+                        <div class="card-box bg-rE">
                             <div class="inner">
-                                <h3> ( {{ $allRooms }} ) </h3>
-                                <p> Number Of Rooms </p>
+                                <h3> ( {{ $allStorageCategory }} ) </h3>
+                                <p> Number Of Storage Categories </p>
                             </div>
                             <div class="icon">
-                                <i class="bi bi-hospital"></i>
+                                <i class="bi bi-columns-gap"></i>
                             </div>
-                            <a href="{{ route('admin.roomsAdmin.index') }}" class="card-box-footer">View More <i
+                            <a href="{{ route('admin.StorageCategory.index') }}" class="card-box-footer">View More <i
                                     class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+               
 
 
 
@@ -237,7 +239,7 @@
 
 
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card-box bg-red2">
+                        <div class="card-box bg-rE">
                             <div class="inner">
                                 <h3> ( {{ $allreview }} ) </h3>
                                 <p> Number Of Reviews </p>
@@ -252,7 +254,7 @@
 
 
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card-box bg-red3">
+                        <div class="card-box bg-green">
                             <div class="inner">
                                 <h3> ( {{ $allmessages }} ) </h3>
                                 <p> Number Of Messages </p>
@@ -265,6 +267,7 @@
                         </div>
                     </div>
 
+                    
 
 
 

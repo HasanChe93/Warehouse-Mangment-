@@ -23,7 +23,7 @@
                 <th>Product Name</th>
                 <th>Product Category</th>
                 <th>Brand Name</th>
-                <th>Shipper Name </th>
+                {{-- <th>Shipper Name </th> --}}
                 <th>Product Model</th>
                 <th>Product Quantity </th>
                 <th>Product Price(USD) </th>

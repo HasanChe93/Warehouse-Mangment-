@@ -1,32 +1,75 @@
 @extends('pages.master.master')
-	@section('content')
-    <div class="my-5 mx-2" >
-<h2>Privacy Policy</h2>
-<p>
-    Our Privacy Policy at Black Horse Hotel Monaghan, the privacy and confidentiality of user information is important. We are committed to maintaining the privacy and security of your user information. We may update this policy from time to time, so please check here frequently. Hotel will not disclose identifiable user information to any third party without consent. What information is collected about you? How do we use it? We take the utmost care to ensure that the personal information we obtain from you is not used in a way that you may be unaware of or not agreeable to. You may wish to submit an information request about our Hotel, participate in one of our promotions or subscribe to our e-mail or postal mail lists. In response, we may ask for information such as your name and postal address. In the event you opt to provide us with this information, we will only use it for the purpose specified. Information collected on the Site may be used to:
-<li>Enter your email in our promotions</li>
-<li>Send marketing communications or surveys to you</li>
-<li>Respond to your questions or suggestions</li>
-<li>Improve the quality of your visit to our site</li>
-You can opt-out of any of these promotions by emailing the hotel directly. We do not sell, rent or share any of your personal information with any other party including any third-party joint promoters, nor use it for unapproved commercial purposes. At the time you submit personal information or make a request, the intended use of the information you submit will be apparent in the context in which you submit it and/or because the Site states the intended purpose. By submitting personal information at the Site, you are giving your consent and permission for any use that is consistent with uses stated in this Privacy Policy or disclosed elsewhere at the Site at the point you submit such personal information, and such consent will be presumed by Hotel, unless you state otherwise at the time you submit the personal information. Secure Reservations If you decide to make an online reservation at the Site, you will be linked to a reservation interface and a third party booking engine (Booking Engine) provided by our booking management system vendor Net Affinity
-    
+@section('content')
+    <div class="my-5 mx-2">
+        <h2>Privacy Policy</h2>
+        <ul>
+            <li>
+                <h4> Introduction:</h4>
+                <p>This Privacy Policy (“Policy”) describes how we collect, use, and disclose
+                    personal information when you use our Warehouse Website (“Website”). By using the Website, you agree to
+                    the terms of this Policy.</p>
 
-</p>
+            <li>
+                <h4> Information Collection:</h4>
+                <p>We collect personal information when you create an account on the
+                    Website, place an order, or otherwise interact with the Website. The personal information we collect may
+                    include your name, email address, mailing address, phone number, payment information, and other
+                    information you provide to us.</p>
 
-</div>
-<div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="row justify-content-center">
-        <div class="col-lg-10 border rounded p-1">
-            <div class="border rounded text-center p-1">
-                <div class="bg-white rounded text-center p-5">
-                    <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                        <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
+            <li>
+                <h4> Use of Personal Information:</h4>
+                <p> We use the personal information we collect to provide you with the
+                    products and services available through the Website, to improve the Website and our services, to
+                    communicate with you, and for other purposes described in this Policy.</p>
+            <li>
+                <h4> Sharing of Personal Information:</h4>
+                <p> We do not sell or rent your personal information to third
+                    parties. We may share your personal information with our affiliates and service providers for the
+                    purpose of providing you with the products and services available through the Website. We may also
+                    disclose your personal information as required by law or in response to a valid request from a law
+                    enforcement or governmental authority.</p>
+
+            <li>
+                <h4> Security of Personal Information:</h4>
+                <p> We take reasonable measures to protect the security of the
+                    personal information we collect, including the use of encryption technology. However, no website or
+                    internet transmission is completely secure, and we cannot guarantee the security of your personal
+                    information.</p>
+
+            <li>
+                <h4> Changes to this Policy:</h4>
+                <p>We may modify this Policy from time to time. We will provide notice of
+                    any material changes to this Policy by posting the updated Policy on the Website. Your continued use of
+                    the Website following the posting of any changes to this Policy constitutes your acceptance of the
+                    changes.
+                </p>
+            <li>
+                <h4> Contact Us:</h4>
+                <p>If you have any questions or concerns about this Policy or our treatment of your
+                    personal information, please contact us.</p>
+
+        </ul>
+
+    </div>
+    <div class="container newsletter mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 border rounded p-1">
+                <div class="border rounded text-center p-1">
+                    <div class="bg-white rounded text-center p-5">
+                        <h4 class="mb-4">Subscribe Our <span class="text-primary text-uppercase">Newsletter</span></h4>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <form method="post" action="{{ route('email.store') }}" enctype="multipart/form-data">
+                                @csrf
+                                <input class="form-control w-100 py-3 ps-4 pe-5" type="text" name="email"
+                                    placeholder="Enter your email">
+                                <button type="submit"
+                                    class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
+

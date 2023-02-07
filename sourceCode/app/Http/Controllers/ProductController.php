@@ -32,14 +32,14 @@ class ProductController extends Controller
             ->select('products.*', 'categories.cat_name')
             ->get();
 
-        $productShipper = User::where("role" ,'shipper')->get();
-    
+        $productShipper = User::where("role", 'shipper')->get();
+
         return view('products', [
-            'products' => $products , 'productShipper' =>$productShipper
-       
+            'products' => $products, 'productShipper' => $productShipper
+
         ]);
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -77,34 +77,26 @@ class ProductController extends Controller
             'product_quantity'         => 'required',
             'product_price'             => 'required',
             'product_description'      => 'required',
-            'product_image1'           => 'required|image',
-            'product_image2'           => 'required|image',
-            'product_image3'           => 'required|image',
-            'product_image4'           => 'required|image'
+            'product_image1',
+            'product_image2',
+            'product_image3',
+            'product_image4'
         ]);
-        $file_name1 = '';
-        if ($request->hasFile('product_image1')) {
-            $file_name1 = time() . '.' . request()->product_image1->getClientOriginalExtension();
-            request()->product_image1->move(public_path('images'), $file_name1);
-        }
+        
+        $file_name1 = time() . '.' . request()->product_image1->getClientOriginalExtension();
 
-        $file_name2 = '';
-        if ($request->hasFile('product_image2')) {
-            $file_name2 = time() . '.' . request()->product_image1->getClientOriginalExtension();
-            request()->product_image1->move(public_path('images'), $file_name2);
-        }
+        request()->product_image1->move(public_path('images'), $file_name1);
 
-        $file_name3 = '';
-        if ($request->hasFile('product_image3')) {
-            $file_name3 = time() . '.' . request()->product_image1->getClientOriginalExtension();
-            request()->product_image1->move(public_path('images'), $file_name3);
-        }
 
-        $file_name4 = '';
-        if ($request->hasFile('product_image4')) {
-            $file_name4 = time() . '.' . request()->product_image1->getClientOriginalExtension();
-            request()->product_image1->move(public_path('images'), $file_name4);
-        }
+        $file_name2 = time() . '.' . request()->product_image2->getClientOriginalExtension();
+
+        request()->product_image2->move(public_path('images'), $file_name2);
+        $file_name3 = time() . '.' . request()->product_image3->getClientOriginalExtension();
+
+        request()->product_image3->move(public_path('images'), $file_name3);
+        $file_name4 = time() . '.' . request()->product_image4->getClientOriginalExtension();
+
+        request()->product_image4->move(public_path('images'), $file_name4);
 
 
         $product = new Product;

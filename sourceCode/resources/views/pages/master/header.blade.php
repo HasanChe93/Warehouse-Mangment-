@@ -159,6 +159,7 @@
                     <a href="{{ route('room') }}" class="nav-item nav-link">Rooms</a>
                     <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
                     <a href="/privacy-policy" class="nav-item nav-link">privacy&policy</a>
+                    <a href="/Terms and Condition" class="nav-item nav-link">Terms&Condition</a>
                     <a href="{{ route('contactus.index') }}" class="nav-item nav-link">Contact Us</a>
                 </div>
 

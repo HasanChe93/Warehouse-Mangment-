@@ -14,7 +14,10 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\ShippersController;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\StorageCategoryController;
+use App\Http\Controllers\StorageController;
 use App\Http\Middleware\AdminMiddleware;
+use App\Models\StorageCategory;
 
 Route::middleware([AdminMiddleware::class])->name('admin.')->prefix('admin')->group(function () {
     Route::resource('/products', ProductController::class);
@@ -28,8 +31,10 @@ Route::middleware([AdminMiddleware::class])->name('admin.')->prefix('admin')->gr
 
 
     Route::resource('/categories', CategoryController::class);
+    Route::resource('/StorageCategory', StorageCategoryController::class);
     // Route::resource('/productsAdmin', ProductAdminController::class);
     Route::resource('/roomsAdmin', RoomController::class);
+   
     Route::resource('/categoryAdmin', CategoryController::class);
     // Route::resource('/productAdmin', ProductsController::class);
     Route::resource('/reviewsAdmin', ReviewController::class);
