@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
-use App\Models\category;
-use App\Models\room;
+use App\Models\StorageCategory;
+use App\Models\Storage;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -19,12 +19,12 @@ class RoomListingController extends Controller
 
     public function index()
     {
-        $cat=category::all();
-        $rooms = DB::table('rooms')
-        ->join('categories', 'rooms.cat_id', '=', 'categories.id')
-        ->select('rooms.*', 'categories.cat_name')->where('status','=','1')
+        $cat=StorageCategory::all();
+        $storages = DB::table('storages')
+        ->join('storage_categories', 'storages.storage_cat_id', '=', 'storage_categories.id')
+        ->select('storages.*', 'storage_categories.storage_cat_name')->where('status','=','1')
         ->get();
-        return view('pages.room', ['rooms' => $rooms,
+        return view('pages.storage', ['storages' => $storages,
         'cat'=>$cat
     ]);
     }
@@ -32,18 +32,18 @@ class RoomListingController extends Controller
 
     public function avilable(Request $request){
 
-        $cat=category::all();
+        $cat=StorageCategory::all();
         $user_date_input=Booking::where('checkIn_date','>=',"{$request->from}")
                                 ->where('checkOut_date','<=',"{$request->to}")
-                                ->get("room_id");
+                                ->get("storage_id");
 
-        $available=room::whereNotIn('id',$user_date_input)->get();
-        $available= $available->where('cat_id',$request->cat_id);
+        $available=Storage::whereNotIn('id',$user_date_input)->get();
+        $available= $available->where('storage_cat_id',$request->storage_cat_id);
         // $available= $available->where('number_of_beds',$request->beds);
  
 
-       return view('pages.room',[
-           'rooms'=>$available,
+       return view('pages.storage',[
+           'storages'=>$available,
            'cat'=>$cat
            
 
@@ -64,10 +64,10 @@ class RoomListingController extends Controller
              
 
         
-        $room = room::find($id);
+        $storage = Storage::find($id);
         $user = Auth::user();
         return view('pages.booking', [
-             'room' => $room,
+             'storage' => $storage,
              'user' => $user
             ]);
     }
@@ -77,23 +77,23 @@ class RoomListingController extends Controller
     {
         try {
 
-            $room = room::find($id);
+            $storage = Storage::find($id);
             $user = Auth::user();
-            $insert = new room();
+            $insert = new Storage();
 
             $start_date = Carbon::parse($request->input('checkin'));
             $end_date = Carbon::parse($request->input('checkout'));
-            $price = $room->room_price;
+            $storage_price = $storage->storage_price;
             $special_request=$request->special_request ;
 
-            $booking = $insert->bookForUser($user->id, $room->id, $start_date, $end_date, $price,$special_request);
+            $booking = $insert->bookForUser($user->id, $storage->id, $start_date, $end_date, $storage_price,$special_request);
 
             return redirect('userprofile');
 
 
         } catch(\Exception $e) {
           
-            return redirect()->route('room.book',$room->id)->with('errorx',  $e->getMessage());
+            return redirect()->route('storage.book',$storage->id)->with('errorx',  $e->getMessage());
         }
     }
 

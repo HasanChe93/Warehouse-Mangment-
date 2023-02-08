@@ -15,7 +15,7 @@
                 <a class="nav-link" href="{{ route('admin.categories.index') }}">Categories</a>
                 <a class="nav-link" href="{{ route('admin.StorageCategory.index') }}">Storage-Category</a>
 
-                <a class="nav-link" href="{{ route('admin.roomsAdmin.index') }}">Rooms</a>
+                <a class="nav-link" href="{{ route('admin.storagesAdmin.index') }}">Storages</a>
                 <a class="nav-link" href="{{ route('admin.booking.index') }}">Reservations</a>
                 <a class="nav-link" href="{{ route('admin.reviewsAdmin.index') }}">Reviews</a>
                 <a class="nav-link" href="{{ route('admin.contactAdmin.index') }}">Messages</a>

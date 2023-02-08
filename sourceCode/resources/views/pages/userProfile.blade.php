@@ -83,7 +83,7 @@
                                         <thead>
 
 
-                                            <th>Room Number</th>
+                                            <th>Storage Number</th>
                                             <th>Total Amount</th>
                                             <th>Date of Booking</th>
                                             <th>Check-in Date</th>
@@ -95,7 +95,7 @@
                                             @foreach ($reservation as $row)
                                                 <tr>
 
-                                                    <td>{{ $row->room_id }}</td>
+                                                    <td>{{ $row->storage_id }}</td>
                                                     <td>{{ $row->totalAmount }} $</td>
                                                     <td>{{ $row->created_at }}</td>
                                                     <td>{{ $row->checkIn_date }}</td>
@@ -132,8 +132,8 @@
                                                                         <h1 class="modal-title fs-5" id="exampleModalLabel">
                                                                             Add Your Review</h1>
 
-                                                                        <input type="hidden" name="room_id"
-                                                                            value="{{ $row->room_id }}">
+                                                                        <input type="hidden" name="storage_id"
+                                                                            value="{{ $row->storage_id }}">
                                                                         <button type="button" class="btn-close"
                                                                             data-bs-dismiss="modal"
                                                                             aria-label="Close"></button>

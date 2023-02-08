@@ -57,12 +57,15 @@ class EmployeesController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'role' => 'required',
+            'employee_type'=>'required'
         ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'role' => $request->role,
+            'employee_type'=>$request->employee_type
+
         ]);
 
         return redirect('admin/employees')->with('success', $request->name . ' Employee created successfully');
@@ -109,13 +112,17 @@ class EmployeesController extends Controller
             'name'          => 'required',
             'email'   => 'required|email',
             'role'        => 'required',
+            'employee_type'=>'required'
+
 
 
         ]);
         User::where('id', $id)->update([
             'name' => $request->name,
             'email' => $request->email,
-            'role' => $request->role
+            'role' => $request->role,
+            'employee_type'=>$request->employee_type
+
         ]);
         // return redirect()->route('employees.index')->with('success','data has been updated successfully');
         return redirect('admin/employees')->with('success', $request->name . '  Data update successfully');

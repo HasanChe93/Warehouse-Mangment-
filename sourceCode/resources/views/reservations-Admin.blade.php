@@ -22,7 +22,7 @@
             <thead>
 
                 <th>Name</th>
-                <th>Room Number</th>
+                <th>Storage Number</th>
                 <th>Total Amount</th>
                 <th>Special Request</th>
                 <th>Date of Booking</th>
@@ -36,7 +36,7 @@
                     <tr>
 
                         <td>{{ $row->name }}</td>
-                        <td>{{ $row->room_id }}</td>
+                        <td>{{ $row->storage_id }}</td>
                         <td>{{ $row->totalAmount }} $</td>
                         <td>{{ $row->special_request }}</td>
                         <td>{{ $row->created_at }}</td>

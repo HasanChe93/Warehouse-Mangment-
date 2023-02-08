@@ -47,11 +47,11 @@
 
 
         
-                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('room') }}">
+                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('storage') }}">
                         <img src="img/pl2.png" class="card-img-top" alt="...">
 
-                        <h5 class="mb-3">Rooms & Appartment</h5>
-                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great room, with
+                        <h5 class="mb-3">storages & Appartment</h5>
+                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great storage, with
                             blackhours.com. Find top hotel deals for all occasions. Tonight, or any night.
                         </p>
 
@@ -60,11 +60,11 @@
 
           
       
-                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('room') }}">
+                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('storage') }}">
                         <img src="img/pl2.png" class="card-img-top" alt="...">
 
-                        <h5 class="mb-3">Rooms & Appartment</h5>
-                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great room, with
+                        <h5 class="mb-3">storages & Appartment</h5>
+                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great storage, with
                             blackhours.com. Find top hotel deals for all occasions. Tonight, or any night.
                         </p>
 
@@ -73,11 +73,11 @@
 
             
           
-                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('room') }}">
+                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('storage') }}">
                         <img src="img/pl2.png" class="card-img-top" alt="...">
 
-                        <h5 class="mb-3">Rooms & Appartment</h5>
-                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great room, with
+                        <h5 class="mb-3">storages & Appartment</h5>
+                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great storage, with
                             blackhours.com. Find top hotel deals for all occasions. Tonight, or any night.
                         </p>
 

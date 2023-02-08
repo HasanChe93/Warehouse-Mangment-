@@ -39,15 +39,15 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title text-center text-primary text-uppercase">Room Booking</h6>
-                <h1 class="mb-5">Book This Room</h1>
+                <h6 class="section-title text-center text-primary text-uppercase">Storage Booking</h6>
+                <h1 class="mb-5">Book This Storage</h1>
             </div>
             <div class="row g-5">
                 <div class="col-lg-6">
 
 
                     <img width="100%" height="100%" class=" rounded w-75 wow zoomIn" data-wow-delay="0.1s"
-                        src="{{ asset('images/' . $room->room_image) }}" >
+                        src="{{ asset('images/' . $storage->storage_image) }}" >
 
 
 
@@ -56,7 +56,7 @@
                     <div class="wow fadeInUp" data-wow-delay="0.2s">
 
 
-                        <form action="{{ route('room.book.confirm', $room->id) }}" method="post"
+                        <form action="{{ route('storage.book.confirm', $storage->id) }}" method="post"
                             enctype="multipart/form-data">
 
                             @csrf

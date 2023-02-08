@@ -38,12 +38,12 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-label-form">Category: </label>
                         <div class="col-sm-10">
-                        <select name="cat_id" class="form-control">
-                            <option  disabled="">Select a Category</option>
-                            @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->cat_name }}</option>
-                            @endforeach
-                        </select>
+                            <select name="cat_id" class="form-control">
+                                <option disabled="">Select a Category</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->cat_name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -69,7 +69,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="row mb-3">
                         <label class="col-sm-2 col-label-form">Product Quantity </label>
                         <div class="col-sm-10">
@@ -93,9 +93,9 @@
 
                     <div class="row">
                         <div class="d-flex justify-content-start mb-2">
-                            <img src="{{ asset('images/' . $file_name1) }}" alt="Image"width="100"
-                            class="img-thumbnail">
-                          
+                            <img src="{{ asset('images/' . $products->product_image1) }}" width="100"
+                                class="img-thumbnail">
+
 
                             <input class="form-control" type="file" id="image" name="image">
 

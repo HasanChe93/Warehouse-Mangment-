@@ -21,7 +21,7 @@
                             </h1>
 
 
-                            <a href="{{ route('room') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A
+                            <a href="{{ route('storage') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A
                                 Space</a>
 
 
@@ -43,7 +43,7 @@
                             </h1>
 
 
-                            <a href="{{ route('room') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A
+                            <a href="{{ route('storage') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A
                                 Space</a>
 
 
@@ -61,7 +61,7 @@
                                 Only!</h1>
 
 
-                            <a href="{{ route('room') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Buy A
+                            <a href="{{ route('storage') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Buy A
                                 Product</a>
 
 
@@ -197,7 +197,7 @@
                         suppliers and manufacturers to ensure that our products are genuine and meet the highest standards
                         of quality.
                     </p>
-                    {{-- <a href="{{ route('room') }}" class="btn btn-primary py-md-3 px-md-5 me-3">Our Warehouse</a> --}}
+                    {{-- <a href="{{ route('storage') }}" class="btn btn-primary py-md-3 px-md-5 me-3">Our Warehouse</a> --}}
 
                 </div>
             </div>
@@ -247,11 +247,11 @@
 
 
         
-                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('room') }}">
+                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('storage') }}">
                         <img src="img/pl2.png" class="card-img-top" alt="...">
 
-                        <h5 class="mb-3">Rooms & Appartment</h5>
-                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great room, with
+                        <h5 class="mb-3">storages & Appartment</h5>
+                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great storage, with
                             blackhours.com. Find top hotel deals for all occasions. Tonight, or any night.
                         </p>
 
@@ -260,11 +260,11 @@
 
           
       
-                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('room') }}">
+                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('storage') }}">
                         <img src="img/pl2.png" class="card-img-top" alt="...">
 
-                        <h5 class="mb-3">Rooms & Appartment</h5>
-                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great room, with
+                        <h5 class="mb-3">storages & Appartment</h5>
+                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great storage, with
                             blackhours.com. Find top hotel deals for all occasions. Tonight, or any night.
                         </p>
 
@@ -273,11 +273,11 @@
 
             
           
-                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('room') }}">
+                    <a class="col-lg-3 col-md-5 service-item rounded" href="{{ route('storage') }}">
                         <img src="img/pl2.png" class="card-img-top" alt="...">
 
-                        <h5 class="mb-3">Rooms & Appartment</h5>
-                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great room, with
+                        <h5 class="mb-3">storages & Appartment</h5>
+                        <p class="text-body mb-0">It's going to be a great night… Now book yourself a great storage, with
                             blackhours.com. Find top hotel deals for all occasions. Tonight, or any night.
                         </p>
 

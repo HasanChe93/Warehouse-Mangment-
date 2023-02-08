@@ -24,8 +24,8 @@ class StorageCategoryController extends Controller
     public function index()
     {
 
-        $StorageCategory = StorageCategory::all();
-        return view('StorageCategory-Admin', ['StorageCategory' => $StorageCategory]);
+        $StorageCategories = StorageCategory::all();
+        return view('StorageCategory-Admin', ['StorageCategories' => $StorageCategories]);
     }
 
     /**
@@ -35,9 +35,9 @@ class StorageCategoryController extends Controller
      */
     public function create()
     {
-        $StorageCategory = StorageCategory::all();
+        $StorageCategories = StorageCategory::all();
         return view('add_StorageCategory', [
-            'StorageCategory' => $StorageCategory,
+            'StorageCategories' => $StorageCategories,
             'auth_user' => Auth::user(),
 
         ]);
@@ -86,9 +86,9 @@ class StorageCategoryController extends Controller
     public function edit($id)
     {
 
-        $StorageCategory = StorageCategory::find($id);
+        $StorageCategories = StorageCategory::find($id);
         return view('edit_StorageCategory', [
-            'StorageCategory' => $StorageCategory,
+            'StorageCategories' => $StorageCategories,
             'auth_user' => Auth::user(),
 
         ]);

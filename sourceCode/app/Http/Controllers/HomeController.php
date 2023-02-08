@@ -7,7 +7,7 @@ use App\Models\category;
 use App\Models\contactus;
 use App\Models\Product;
 use App\Models\review;
-use App\Models\room;
+use App\Models\Storage;
 use App\Models\StorageCategory;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +39,7 @@ class HomeController extends Controller
         $allProducts = Product::all()->count();
         $allCategory = category::all()->count();
         $allStorageCategory = StorageCategory::all()->count();
-        $allRooms = room::all()->count();
+        $allStorages = Storage::all()->count();
 
         $allreview = review::all()->count();
         $allReservations = Booking::all()->count();
@@ -53,7 +53,7 @@ class HomeController extends Controller
                 'allProducts' => $allProducts,
                 'allCategory' => $allCategory,
                 'allStorageCategory' => $allStorageCategory,
-                'allRooms' => $allRooms,
+                'allStorages' => $allStorages,
                 'allreview' => $allreview,
                 'allReservations' => $allReservations,
                 'allmessages' => $allmessages,
@@ -67,7 +67,7 @@ class HomeController extends Controller
                 'allProducts' => $allProducts,
                 'allCategory' => $allCategory,
                 'allStorageCategory' => $allStorageCategory,
-                'allRooms' => $allRooms,
+                'allStorages' => $allStorages,
                 'allreview' => $allreview,
                 'allReservations' => $allReservations,
                 'allmessages' => $allmessages,
@@ -81,8 +81,7 @@ class HomeController extends Controller
                 'allEmployees' => $allEmployees->count(),
                 'allProducts' => $allProducts,
                 'allCategory' => $allCategory,
-                'allRooms' => $allRooms,
-                'allreview' => $allreview,
+                'allStorages' => $allStorages,                'allreview' => $allreview,
                 'allReservations' => $allReservations,
                 'allmessages' => $allmessages
 

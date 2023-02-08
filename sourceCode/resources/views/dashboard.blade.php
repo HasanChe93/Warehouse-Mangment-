@@ -212,7 +212,19 @@
 
 
 
-
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card-box bg-green">
+                            <div class="inner">
+                                <h3> ( {{ $allStorages }} ) </h3>
+                                <p> Number Of Storages </p>
+                            </div>
+                            <div class="icon">
+                                <i class="bi bi-hospital"></i>
+                            </div>
+                            <a href="{{ route('admin.storagesAdmin.index') }}" class="card-box-footer">View More <i
+                                    class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
                
 
 

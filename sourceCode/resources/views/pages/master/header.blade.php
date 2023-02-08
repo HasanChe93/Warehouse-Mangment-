@@ -156,7 +156,7 @@
                 <div class="navbar-nav mr-auto py-0">
                     <a href="{{ route('home') }}" class="nav-item nav-link ">Home</a>
                     <a href="{{ route('services') }}" class="nav-item nav-link">Services</a>
-                    <a href="{{ route('room') }}" class="nav-item nav-link">Rooms</a>
+                    <a href="{{ route('storage') }}" class="nav-item nav-link">Storages</a>
                     <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
                     <a href="/privacy-policy" class="nav-item nav-link">privacy&policy</a>
                     <a href="/Terms and Condition" class="nav-item nav-link">Terms&Condition</a>

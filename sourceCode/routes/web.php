@@ -54,11 +54,11 @@ Route::get('/services', function () {
 
 
 
-Route::get('/room', [RoomListingController::class, 'index'])->name('room');
+Route::get('/storage', [RoomListingController::class, 'index'])->name('storage');
 Route::post('/roomsearch', [RoomListingController::class, 'avilable'])->name('avilable');
 Route::middleware([GuestMiddleware::class])->group(function () {
-    Route::get('/room/{id}/book', [RoomListingController::class, 'book'])->name('room.book');
-    Route::post('/room/{id}/booking/confirm', [RoomListingController::class, 'confirm'])->name('room.book.confirm');
+    Route::get('/storage/{id}/book', [RoomListingController::class, 'book'])->name('storage.book');
+    Route::post('/storage/{id}/booking/confirm', [RoomListingController::class, 'confirm'])->name('storage.book.confirm');
     
 });
 

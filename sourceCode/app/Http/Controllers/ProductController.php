@@ -34,6 +34,8 @@ class ProductController extends Controller
 
         $productShipper = User::where("role", 'shipper')->get();
 
+        
+
         return view('products', [
             'products' => $products, 'productShipper' => $productShipper
 
@@ -50,11 +52,12 @@ class ProductController extends Controller
     {
         $categories = category::all();
         $shippers = User::where('role', 'shipper')->get();
+        $user_id = Auth::id();
         return view('add_products', [
             'categories' => $categories,
             'shippers' => $shippers,
             'auth_user' => Auth::user(),
-
+            
         ]);
         return view('add_products');
     }
@@ -77,12 +80,12 @@ class ProductController extends Controller
             'product_quantity'         => 'required',
             'product_price'             => 'required',
             'product_description'      => 'required',
-            'product_image1',
-            'product_image2',
-            'product_image3',
-            'product_image4'
+            'product_image1'=> 'required|image',
+            'product_image2' => 'required|image',
+            'product_image3'=> 'required|image',
+            'product_image4' => 'required|image'
         ]);
-        
+
         $file_name1 = time() . '.' . request()->product_image1->getClientOriginalExtension();
 
         request()->product_image1->move(public_path('images'), $file_name1);
@@ -100,7 +103,7 @@ class ProductController extends Controller
 
 
         $product = new Product;
-
+        $product->user_id = $request->user_id;
         $product->product_name = $request->product_name;
         $product->cat_id = $request->cat_name;
         $product->brand_name = $request->brand_name;
@@ -109,7 +112,7 @@ class ProductController extends Controller
         $product->product_price = $request->product_price;
         $product->product_quantity = $request->product_quantity;
         $product->product_description = $request->product_description;
-
+        $product->user_id=Auth::user()->id;
         $product->product_image1 = $file_name1;
         $product->product_image2 = $file_name2;
         $product->product_image3 = $file_name3;
@@ -117,7 +120,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect('admin/products')->with('success', 'Product Data Add successfully');;
+        return redirect('admin/products')->with('success', $request->product_name . ' Has Been created successfully');;
     }
 
     /**
@@ -170,39 +173,49 @@ class ProductController extends Controller
             'product_price'             => 'required',
             'product_quantity'         => 'required',
             'product_description'      => 'required',
-            'product_image1',
-            'product_image2',
-            'product_image3',
-            'product_image4'
+            'product_image1' => 'required',
+            'product_image2' => 'required',
+            'product_image3' => 'required',
+            'product_image4'=> 'required' 
 
 
         ]);
 
+    
 
-        $file_name1 = '';
-        if ($request->hasFile('product_image1')) {
-            $file_name1 = time() . '.' . request()->product_image1->getClientOriginalExtension();
-            request()->product_image1->move(public_path('images'), $file_name1);
+        if ($request->product_image1 != "") {
+            $product_image1 = time() . '.' . request()->product_image1->getClientOriginalExtension();
+            request()->product_image1->move(public_path('images'), $product_image1);
+        } 
+        
+        else {
+            $product_image1 = $request->hidden_img;
         }
-
-        $file_name2 = '';
-        if ($request->hasFile('product_image2')) {
-            $file_name2 = time() . '.' . request()->product_image1->getClientOriginalExtension();
-            request()->product_image1->move(public_path('images'), $file_name2);
+        //img1
+        if ($request->product_image2 != "") {
+            $product_image2 = time() . '.' . request()->product_image2->getClientOriginalExtension();
+            request()->product_image2->move(public_path('images'), $product_image2);
+        } 
+        
+        else {
+            $product_image2 = $request->hidden_img;
         }
-
-        $file_name3 = '';
-        if ($request->hasFile('product_image3')) {
-            $file_name3 = time() . '.' . request()->product_image1->getClientOriginalExtension();
-            request()->product_image1->move(public_path('images'), $file_name3);
+        if ($request->product_image3 != "") {
+            $product_image3 = time() . '.' . request()->product_image3->getClientOriginalExtension();
+            request()->product_image3->move(public_path('images'), $product_image3);
+        } 
+        
+        else {
+            $product_image3 = $request->hidden_img;
         }
-
-        $file_name4 = '';
-        if ($request->hasFile('product_image4')) {
-            $file_name4 = time() . '.' . request()->product_image1->getClientOriginalExtension();
-            request()->product_image1->move(public_path('images'), $file_name4);
+        if ($request->product_image4 != "") {
+            $product_image4 = time() . '.' . request()->product_image4->getClientOriginalExtension();
+            request()->product_image4->move(public_path('images'), $product_image4);
+        } 
+        
+        else {
+            $product_image4 = $request->hidden_img;
         }
-
 
 
         $product = Product::find($id);
@@ -214,14 +227,14 @@ class ProductController extends Controller
         $product->product_price = $request->product_price;
         $product->product_quantity = $request->product_quantity;
         $product->product_description = $request->product_description;
-
-        $product->product_image1 = $file_name1;
-        $product->product_image2 = $file_name2;
-        $product->product_image3 = $file_name3;
-        $product->product_image4 = $file_name4;
+        $product->user_id=Auth::user()->id;
+        $product->product_image1 = $product_image1;
+        $product->product_image2 = $product_image2;
+        $product->product_image3 = $product_image3;
+        $product->product_image4 = $product_image4;
         $product->save();
 
-        return redirect('admin/products')->with('success', 'Product Data update successfully');
+        return redirect('admin/products')->with('success', $request->product_name . ' Has Been Updated successfully');
     }
 
     /**

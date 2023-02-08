@@ -34,7 +34,7 @@
 
 
 
-                @foreach ($StorageCategory as $row)
+                @foreach ($StorageCategories as $row)
                     <tr>
                         <td>{{ $row->id }}</td>
                         <td>{{ $row->storage_cat_name }}</td>

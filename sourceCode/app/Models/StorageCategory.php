@@ -12,6 +12,6 @@ class StorageCategory extends Model
         'storage_cat_img',
         
     ];
-    public function rooms(){
-        return $this->hasMany(room::class);
+    public function storages(){
+        return $this->hasMany(storage::class);
     }}

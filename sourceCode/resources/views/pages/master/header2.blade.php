@@ -156,7 +156,7 @@
                 <div class="navbar-nav mr-auto py-0">
                     <a href="{{ route('home') }}" class="nav-item nav-link ">Home</a>
                     <a href="{{ route('services') }}" class="nav-item nav-link">Services</a>
-                    <a href="{{ route('room') }}" class="nav-item nav-link">Rooms</a>
+                    <a href="{{ route('storage') }}" class="nav-item nav-link">Storagess</a>
                     <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
                     <a href="{{ route('contactus.index') }}" class="nav-item nav-link">Contact Us</a>
                 </div>

@@ -40,7 +40,7 @@ class ReviewuserController extends Controller
 
         $review->user_id=Auth::user()->id;
         $review->name=Auth::user()->name;
-        $review->room_id=$request->room_id  ;
+        $review->storage_id=$request->storage_id  ;
         $review->review = $request->review;
        
 
@@ -56,3 +56,4 @@ class ReviewuserController extends Controller
 
 
 }
+
