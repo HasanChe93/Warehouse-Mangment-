@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\category;
 use App\Models\contactus;
+use App\Models\CustomStorage;
 use App\Models\Product;
 use App\Models\review;
 use App\Models\Storage;
@@ -44,6 +45,7 @@ class HomeController extends Controller
         $allreview = review::all()->count();
         $allReservations = Booking::all()->count();
         $allmessages = contactus::all()->count();
+        $allCustomStorage = CustomStorage::all()->count();
 
         if (Auth::user()->role == 'admin') {
             return view('/dashboard', [
@@ -57,6 +59,7 @@ class HomeController extends Controller
                 'allreview' => $allreview,
                 'allReservations' => $allReservations,
                 'allmessages' => $allmessages,
+                'allCustomStorage' => $allCustomStorage
 
             ]);
         } elseif (Auth::user()->role == 'shipper') {
@@ -81,9 +84,12 @@ class HomeController extends Controller
                 'allEmployees' => $allEmployees->count(),
                 'allProducts' => $allProducts,
                 'allCategory' => $allCategory,
-                'allStorages' => $allStorages,                'allreview' => $allreview,
+                'allStorages' => $allStorages,
                 'allReservations' => $allReservations,
-                'allmessages' => $allmessages
+                'allmessages' => $allmessages,
+                'allStorageCategory' => $allStorageCategory,
+                'allCustomStorage' => $allCustomStorage
+
 
             ]);
         } else  return view('/index');

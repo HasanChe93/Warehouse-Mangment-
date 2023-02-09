@@ -9,9 +9,11 @@ use App\Http\Controllers\ReviewuserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\RoomListingController;
+use App\Http\Controllers\StorageListingController;
+use App\Http\Controllers\StorageBookingController;
 use App\Http\Controllers\UserPublicController;
 use App\Http\Middleware\GuestMiddleware;
+use App\Http\Controllers\CustomStorageBookingController;
 
 
 
@@ -25,13 +27,13 @@ use App\Http\Middleware\GuestMiddleware;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/email',[EmailController::class,'store'])->name('email.store');
+
+Route::post('/email', [EmailController::class, 'store'])->name('email.store');
 Auth::routes();
 
 
 Route::get('/', function () {
     return view('pages.index');
-    
 });
 
 Route::get('/index', function () {
@@ -54,12 +56,11 @@ Route::get('/services', function () {
 
 
 
-Route::get('/storage', [RoomListingController::class, 'index'])->name('storage');
-Route::post('/roomsearch', [RoomListingController::class, 'avilable'])->name('avilable');
+Route::get('/storage', [StorageListingController::class, 'index'])->name('storage');
+Route::post('/roomsearch', [StorageListingController::class, 'avilable'])->name('avilable');
 Route::middleware([GuestMiddleware::class])->group(function () {
-    Route::get('/storage/{id}/book', [RoomListingController::class, 'book'])->name('storage.book');
-    Route::post('/storage/{id}/booking/confirm', [RoomListingController::class, 'confirm'])->name('storage.book.confirm');
-    
+    Route::get('/storage/{id}/book', [StorageListingController::class, 'book'])->name('storage.book');
+    Route::post('/storage/{id}/booking/confirm', [StorageListingController::class, 'confirm'])->name('storage.book.confirm');
 });
 
 
@@ -80,11 +81,12 @@ Route::get('/Terms and Condition', function () {
     return view('pages.Terms and Condition');
 });
 
-Route::get('/dashboard', [RoomListingController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [StorageListingController::class, 'index'])->name('dashboard');
 
 
 
 Route::resource('/userprofile', UserPublicController::class);
+
 
 Route::resource('/contactus', ContactusController::class);
 Route::resource('/review', ReviewuserController::class);
@@ -95,7 +97,7 @@ Route::get('middleware', function () {
         if (isset($r->action['middleware']))
             return $r->action['middleware'];
     })->flatten();
-    return array_unique($collection->toArray());
+  
 });
 
 
@@ -117,3 +119,6 @@ Route::get('/Sports&Gaming', function () {
     return view('pages.Sports&Gaming');
 });
 
+Route::get('/create', function () {
+    return view('pages.CSB_create');
+});

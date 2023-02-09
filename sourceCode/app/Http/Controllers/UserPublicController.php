@@ -55,7 +55,7 @@ class UserPublicController extends Controller
         User::where('id', $id)->update([
             'name' => $request->name,
             'email' => $request->email,
-            'user_image'=>$user_image,
+            'user_image' => $user_image,
             'phone' => $request->phone,
             // 'password' => Hash::make($request->password)
 
@@ -63,7 +63,13 @@ class UserPublicController extends Controller
         // return redirect()->route('users.index')->with('success','data has been updated successfully');
         return redirect('userprofile')->with('success', $request->name . ' User Data update successfully');
     }
+    public function customStorageBookings()
+    {
+        $user = Auth::user();
+        $customStorageBookings = $user->customStorageBookings;
 
+        return view('pages.userCustomStorageBookings', ['customStorageBookings' => $customStorageBookings]);
+    }
 
     /**
      * Remove the specified resource from storage.

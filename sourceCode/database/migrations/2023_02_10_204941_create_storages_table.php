@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('storages', function (Blueprint $table) {
             $table->id();
-            $table->binary('storage_dimensions');
+            $table->integer('storage_dimensions');
 
             $table->foreignId('storage_cat_id')->references('id')->on('storage_categories')
                 ->onDelete('cascade');

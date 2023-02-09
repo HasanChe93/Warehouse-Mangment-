@@ -47,7 +47,7 @@
 
 
                     <img width="100%" height="100%" class=" rounded w-75 wow zoomIn" data-wow-delay="0.1s"
-                        src="{{ asset('images/' . $storage->storage_image) }}" >
+                        src="{{ asset('images/' . $storage->storage_image) }}">
 
 
 
@@ -60,6 +60,12 @@
                             enctype="multipart/form-data">
 
                             @csrf
+                            <input name="storageId" type="" value={{ $storage->id }} />
+                            <input name="s_meter_price" type="" value={{ $storage->s_meter_price }} />
+                            <input name="storage_dimensions" type="" value={{ $storage->storage_dimensions }} />
+                            <input name="storage_name" type="" value={{ $storage->storage_name }} />
+                            
+
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -77,7 +83,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" name="checkin"
+                                        <input type="date" class="form-control datetimepicker-input" name="checkin"
                                             id="checkin" placeholder="Check In" data-target="#date3"
                                             data-toggle="datetimepicker" />
                                         <label for="checkin">Check In</label>
@@ -85,7 +91,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date4" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" name="checkout"
+                                        <input type="date" class="form-control datetimepicker-input" name="checkout"
                                             id="checkout" placeholder="Check Out" data-target="#date4"
                                             data-toggle="datetimepicker" />
                                         <label for="checkout">Check Out</label>
@@ -94,7 +100,8 @@
 
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea name="special_request" class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                        <textarea name="special_request" class="form-control" placeholder="Special Request" id="message"
+                                            style="height: 100px"></textarea>
                                         <label for="message">Special Request</label>
                                     </div>
                                 </div>

@@ -19,6 +19,6 @@ class EmailController extends Controller
         $email->email = $request->email;
         $email->save();
 
-        return redirect()->back()->with('success', 'Room Data Add successfully');
+        return redirect()->back()->with('success', 'Email Was Sent successfully');
     }
 }

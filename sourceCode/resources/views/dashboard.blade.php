@@ -227,7 +227,20 @@
                     </div>
                
 
-
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card-box bg-gO">
+                            <div class="inner">
+                                <h3> ( {{ $allCustomStorage }} ) </h3>
+                                <p> Number Of Custom Storage </p>
+                            </div>
+                            <div class="icon">
+                                <i class="bi bi-columns-gap"></i>
+                            </div>
+                            <a href="CSB_index" class="card-box-footer">View More <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                              
+                        </div>
+                    </div>
 
 
 

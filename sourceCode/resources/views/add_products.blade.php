@@ -60,9 +60,9 @@
 				<div class="col-sm-10">
 					<select name="shipper_name" class="form-control">
 
-						<option value="none" selected="" disabled="">Select Shipper</option>
+						<option >Select Shipper</option>
 						@foreach ($shippers as $shipper)
-							<option value="{{ $shipper->id }}">{{ $shipper->name }}</option>
+							<option value="{{ $shipper->name }}">{{ $shipper->name }}</option>
 						@endforeach
 
 

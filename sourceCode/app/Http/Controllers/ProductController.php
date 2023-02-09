@@ -86,18 +86,18 @@ class ProductController extends Controller
             'product_image4' => 'required|image'
         ]);
 
-        $file_name1 = time() . '.' . request()->product_image1->getClientOriginalExtension();
+        $file_name1 = "p1".time() . '.' . request()->product_image1->getClientOriginalExtension();
 
         request()->product_image1->move(public_path('images'), $file_name1);
 
 
-        $file_name2 = time() . '.' . request()->product_image2->getClientOriginalExtension();
+        $file_name2 ="p2". time() . '.' . request()->product_image2->getClientOriginalExtension();
 
         request()->product_image2->move(public_path('images'), $file_name2);
-        $file_name3 = time() . '.' . request()->product_image3->getClientOriginalExtension();
+        $file_name3 ="p3". time() . '.' . request()->product_image3->getClientOriginalExtension();
 
         request()->product_image3->move(public_path('images'), $file_name3);
-        $file_name4 = time() . '.' . request()->product_image4->getClientOriginalExtension();
+        $file_name4 ="p4". time() . '.' . request()->product_image4->getClientOriginalExtension();
 
         request()->product_image4->move(public_path('images'), $file_name4);
 

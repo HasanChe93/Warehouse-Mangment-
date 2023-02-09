@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Throwable;
 
@@ -30,20 +31,20 @@ class Storage extends Model
   }
 
 
-  public function bookForUse($userId, $storageId,$storage_name, $start_date, $end_date, $s_meter_price,$special_request, $storage_dimensions)
+  public function bookForUser($storageId, $userId,$checkin, $checkout, $s_meter_price,$special_request,$storage_dimensions,$storage_name)
   {
 
     //1. check the storage availability
 
-    if ($end_date <= $start_date) {
+    if ($checkout <= $checkin) {
       abort(403, "invalid date");
     }
 
-    $from = $start_date->toDateString();
-    $to = $end_date->toDateString();
+    $from = $checkin->toDateString();
+    $to = $checkout->toDateString();
 
 
-    $diff = $start_date->diffInDays($end_date);
+    $diff = $checkin->diffInDays($checkout);
 
     $totalPrice = ($diff * $s_meter_price * $storage_dimensions );
     $tax = $totalPrice * 16 / 100;
@@ -74,7 +75,7 @@ class Storage extends Model
 
     $booking = new Booking();
     $booking->storage_name = $storage_name;
-    $booking->user_id = $userId;
+    $booking->user_id =  Auth::user()->id;
     $booking->storage_id = $storageId;
     $booking->totalAmount = $finalAmount;
     $booking->checkIn_date = $from;
